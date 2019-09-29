@@ -108,7 +108,7 @@ class InputPart extends React.Component {
             <body>
               <tr>
                 <td>
-                  <div class="labelStyle">Select Loan amount</div>
+                  <div class="labelStyle">Select Loan amount ( USD )</div>
                 </td>
                 <td class="tdStyles">
                   <Slider className="slider" valueLabelDisplay="on" value={this.state.sliderLoanAmount} onChange={this.handleAmountSliderValue} onChangeCommitted={this.handleAmountSliderChange} defaultValue={500} max={5000} min={500} />
@@ -213,7 +213,7 @@ class OutputPart extends React.Component {
                       <div class="labelStyle">Loan Amount</div>
                     </td>
                     <td class="tdStyles">
-                      {this.state.loanamount}
+                      {this.state.loanamount} USD
                     </td>
                   </tr>
                   <tr>
@@ -221,7 +221,7 @@ class OutputPart extends React.Component {
                       <div class="labelStyle">Monthly Payments</div>
                     </td>
                     <td class="tdStyles">
-                      {this.state.monthlyPayment}
+                      {this.state.monthlyPayment} USD
                     </td>
                   </tr>
                 </body>
@@ -305,7 +305,7 @@ class SomeComponent extends React.Component {
       return (
 
         <Fab color="secondary" className="button-margin" aria-label="edit" onClick={e => this.buttonclick(item)}>
-          {item}
+          {item} 
         </Fab>
 
       );
@@ -314,7 +314,7 @@ class SomeComponent extends React.Component {
     return (
         <div class="card">
           <div class="container">
-            <h4><b>Loan Amount:{this.props.id}</b></h4>
+            <h4><b>Loan Amount:{this.props.id} USD</b></h4>
             <p>Months</p>
             {listItems}
           </div>
