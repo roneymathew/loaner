@@ -315,7 +315,7 @@ class SomeComponent extends React.Component {
         <div class="card">
           <div class="container">
             <h4><b>Loan Amount:{this.props.id}</b></h4>
-            <p>Other info</p>
+            <p>Months</p>
             {listItems}
           </div>
 
