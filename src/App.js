@@ -115,7 +115,7 @@ componentDidUpdate(prevProps){
 class OutputPart extends React.Component{
     constructor(props){
     super(props);
-    this.state={result:{}}
+    this.state={loanamount:null,interestRate:null,duration:null,monthlyPayment:null}
 
 
   }
@@ -127,8 +127,8 @@ class OutputPart extends React.Component{
       .then(res => res.json())
       .then(
         (result) => {
-          this.setState({result:result})
-          console.log(this.state)
+          this.setState({loanamount:result.principal.amount,interestRate:result.interestRate,duration:result.numPayments,monthlyPayment:result.monthlyPayment.amount })
+
         }
       );
     }
@@ -140,8 +140,8 @@ class OutputPart extends React.Component{
       .then(res => res.json())
       .then(
         (result) => {
-          this.setState({result:result})
-          console.log(this.state)
+           this.setState({loanamount:result.principal.amount,interestRate:result.interestRate,duration:result.numPayments,monthlyPayment:result.monthlyPayment.amount })
+
         }
       );
     
@@ -153,8 +153,10 @@ class OutputPart extends React.Component{
   render(){
     return(
       <div className="root">
-      <p>{this.state.result.numPayments}</p>
-      <p>{this.state.result.interestRate}</p>
+      <p>{this.state.duration}</p>
+      <p>{this.state.interestRate}</p>
+      <p>{this.state.loanamount}</p>
+      <p>{this.state.monthlyPayment}</p>
 
     </div>)
   }
